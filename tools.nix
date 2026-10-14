@@ -1,4 +1,12 @@
-{ pkgs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
 
   environment.systemPackages = with pkgs; [
     #neovim
@@ -7,10 +15,12 @@
     tree-sitter
     nixfmt
     stylua
-    nerd-fonts.jetbrains-mono
     #dev
     git
+    nodejs
+    pnpm
     #gui
     firefox
+    obs-studio
   ];
 }
