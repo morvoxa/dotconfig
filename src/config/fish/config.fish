@@ -5,6 +5,7 @@ if status is-interactive
     abbr -a xrm "sudo xbps-remove -R"
     abbr -a xoo "sudo xbps-remove -OOo"
     abbr -a cmt "$HOME/nixos-config/src/commit"
+    direnv hook fish | source
 end
 
 set -gx PNPM_PATH "$HOME/.local/share/pnpm/bin"

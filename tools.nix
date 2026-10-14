@@ -23,4 +23,5 @@
     firefox
     obs-studio
   ];
+  programs.direnv.enable = true;
 }
