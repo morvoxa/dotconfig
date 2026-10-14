@@ -15,6 +15,7 @@
     tree-sitter
     nixfmt
     stylua
+    wl-clipboard-rs
     #dev
     git
     nodejs
