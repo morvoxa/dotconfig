@@ -14,7 +14,7 @@ PanelWindow {
         right: true
     }
     implicitHeight: 22
-    color: "#00ff00"
+    color: "#ffffff"
 
     Rectangle {
         anchors.bottom: parent.bottom
