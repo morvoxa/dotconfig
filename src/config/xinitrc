@@ -1,0 +1,3 @@
+xrandr -s 1920x1080 -r 75.00 &
+xset r rate 200 35 &
+exec dwm
