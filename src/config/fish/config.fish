@@ -7,7 +7,7 @@ if status is-interactive
     abbr -a cmt "$HOME/dotconfig/src/commit"
 end
 
-set -gx PNPM_PATH "$HOME/.local/share/pnpm/bin"
-set -gx CARGO_HOME "$HOME/.cargo/bin"
-set -gx LOCAL_HOME "$HOME/.local/bin"
-set -gx PATH "$CARGO_HOME" "$PNPM_PATH" "$LOCAL_HOME" $PATH
+set -gx PNPM_BIN "$HOME/.local/share/pnpm/bin"
+set -gx CARGO_BIN "$HOME/.cargo/bin"
+set -gx LOCAL_BIN "$HOME/.local/bin"
+set -gx PATH "$CARGO_BIN" "$PNPM_BIN" "$LOCAL_BIN" $PATH
