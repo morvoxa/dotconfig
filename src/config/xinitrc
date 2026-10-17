@@ -1,5 +1,0 @@
-xrandr -s 1920x1080 -r 75.00 &
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &
-xset r rate 200 35 &
-nm-applet &
-dbus-run-session dwm
