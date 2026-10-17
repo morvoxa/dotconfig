@@ -5,10 +5,10 @@ if status is-login
 end
 if status is-interactive
   #for void
-    abbr -a xii "sudo xbps-install -S"
-    abbr -a xse "sudo xbps-query -Rs"
-    abbr -a xrm "sudo xbps-remove -R"
-    abbr -a xoo "sudo xbps-remove -OOo"
+    abbr -a si "sudo pacman -Sy"
+    abbr -a ss "sudo pacman -Ss"
+    abbr -a srm "sudo pacman -Rns"
+    abbr -a soo "sudo pacman -Scc"
     abbr -a cmt "$HOME/dotconfig/src/commit"
 end
 
