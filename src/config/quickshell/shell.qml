@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Effects 
 import Quickshell
 import Quickshell.Io
+import Quickshell.Services.SystemTray 
 
 PanelWindow {
     id: root
@@ -13,8 +14,11 @@ PanelWindow {
         right: true
     }
     
-    height: 28 
+    height: 34 
     color: "transparent"
+
+    // Memastikan bar mendapat prioritas lapisan interaksi eksklusif dari compositor Niri
+    exclusionMode: ExclusionMode.Exclusive
 
     property var workspaceList: []
     property string activeAppTitle: "Desktop"
@@ -90,7 +94,7 @@ PanelWindow {
         source: capsuleContainer
         anchors.fill: capsuleContainer
         shadowEnabled: true
-        shadowColor: "#26000000" // Bayangan ambient halus khas UI premium
+        shadowColor: "#26000000" 
         shadowBlur: 0.5
         shadowVerticalOffset: 2
         shadowHorizontalOffset: 0
@@ -102,12 +106,12 @@ PanelWindow {
         anchors.top: parent.top
         anchors.topMargin: 2 
 
-        width: masterRow.width + 24
-        height: 22
+        width: masterRow.width + 28 
+        height: 28 
         radius: height / 2 
 
-        color: "#d9111215" // Efek Frosted Glass gelap pekat (90% Opacity)
-        border.width: 0    // Tanpa border kaku agar terlihat modern
+        color: "#d9111215" 
+        border.width: 0    
         border.color: "transparent"
 
         Behavior on width {
@@ -117,7 +121,7 @@ PanelWindow {
         Row {
             id: masterRow
             anchors.centerIn: parent
-            spacing: 12 
+            spacing: 14 
 
             // --- [KIRI] Title App ---
             Text {
@@ -133,14 +137,14 @@ PanelWindow {
                 }
                 color: "#e5e7eb" 
                 font.bold: true
-                font.pixelSize: 11
+                font.pixelSize: 12 
                 font.family: "JetBrains Mono"
             }
 
-            // --- SEPARATOR KIRI ---
+            // --- SEPARATOR ---
             Rectangle {
                 width: 1
-                height: 10
+                height: 12 
                 color: "#ffffff"
                 opacity: 0.08 
                 anchors.verticalCenter: parent.verticalCenter
@@ -149,17 +153,17 @@ PanelWindow {
             // --- [TENGAH] Workspace Indicators ---
             Row {
                 id: workspaceRow
-                spacing: 6
+                spacing: 8 
                 anchors.verticalCenter: parent.verticalCenter
 
                 Repeater {
                     model: root.workspaceList
 
                     Rectangle {
-                        width: modelData.isActive ? 16 : 8
-                        height: 8
+                        width: modelData.isActive ? 22 : 10 
+                        height: 10 
                         radius: height / 2
-                        color: modelData.isActive ? "#38bdf8" : "#374151" // Aksen Cyan modern untuk yang aktif
+                        color: modelData.isActive ? "#38bdf8" : "#374151" 
 
                         Behavior on width {
                             NumberAnimation { duration: 120; easing.type: Easing.OutQuad }
@@ -170,17 +174,17 @@ PanelWindow {
                             text: modelData.name
                             color: "#0f172a" 
                             font.bold: true
-                            font.pixelSize: 7
-                            visible: modelData.isActive && width > 10
+                            font.pixelSize: 9 
+                            visible: modelData.isActive && width > 14
                         }
                     }
                 }
             }
 
-            // --- SEPARATOR KANAN ---
+            // --- SEPARATOR ---
             Rectangle {
                 width: 1
-                height: 10
+                height: 12 
                 color: "#ffffff"
                 opacity: 0.08 
                 anchors.verticalCenter: parent.verticalCenter
@@ -193,8 +197,65 @@ PanelWindow {
                 text: "--:--"
                 color: "#e5e7eb"
                 font.bold: true
-                font.pixelSize: 11
+                font.pixelSize: 12 
                 font.family: "JetBrains Mono"
+            }
+
+            // --- SEPARATOR (Hanya muncul jika ada ikon System Tray) ---
+            Rectangle {
+                width: 1
+                height: 12 
+                color: "#ffffff"
+                opacity: 0.08 
+                anchors.verticalCenter: parent.verticalCenter
+                visible: systrayRow.count > 0
+            }
+
+            // --- [PALING KANAN] System Tray ---
+            Row {
+                id: systrayRow
+                spacing: 8 
+                anchors.verticalCenter: parent.verticalCenter
+                property int count: systrayRepeater.count
+
+                Repeater {
+                    id: systrayRepeater
+                    model: SystemTray.items
+
+                    Item {
+                        id: trayItemWrapper
+                        width: 16  
+                        height: 16 
+                        anchors.verticalCenter: parent.verticalCenter
+                        
+                        Image {
+                            anchors.fill: parent
+                            source: modelData.icon ? modelData.icon : ""
+                            fillMode: Image.PreserveAspectFit
+                        }
+
+                        MouseArea {
+                            id: trayMouseArea
+                            anchors.fill: parent
+                            acceptedButtons: Qt.LeftButton | Qt.RightButton
+                            
+                            onClicked: (mouse) => {
+                                if (mouse.button === Qt.LeftButton) {
+                                    // Klik Kiri: Jalankan aktivasi utama aplikasi
+                                    modelData.activate();
+                                } else if (mouse.button === Qt.RightButton) {
+                                    // Klik Kanan: Gunakan engine resmi Quickshell untuk memicu jendela konteks menu
+                                    if (modelData.hasMenu && modelData.menu) {
+                                        SystemTray.itemOpener.open(modelData.menu, trayMouseArea);
+                                    } else {
+                                        // Mekanisme cadangan jika aplikasi menggunakan contextMenu X11 lama
+                                        modelData.contextMenu();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

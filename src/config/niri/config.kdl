@@ -20,7 +20,7 @@ layout {
     }
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 1
+        width 2
         active-color "#7fc8ff"
         inactive-color "#505050"
     }
@@ -43,7 +43,7 @@ layout {
 
 spawn-at-startup "qs"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "waybar"
+spawn-at-startup "nm-applet"
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     // off
