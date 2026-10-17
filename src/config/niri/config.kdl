@@ -42,6 +42,7 @@ layout {
 }
 
 spawn-at-startup "qs"
+spawn-at-startup "awww-daemon"
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     // off
