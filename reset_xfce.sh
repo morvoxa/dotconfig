@@ -7,8 +7,8 @@ pkill xfconfd
 pkill xfsettingsd
 
 # 2. Lakukan Full Reset (Hapus konfigurasi bawaan/lama)
-echo "Membersihkan konfigurasi lama..."
-rm -rf ~/.config/xfce4 ~/.cache/xfce4 ~/.config/xfconf ~/.cache/sessions
+#echo "Membersihkan konfigurasi lama..."
+#rm -rf ~/.config/xfce4 ~/.cache/xfce4 ~/.config/xfconf ~/.cache/sessions
 
 # 3. Buat direktori target yang baru bersih
 TARGET_DIR="$HOME/.config/xfce4/xfconf/xfce-perchannel-xml"
