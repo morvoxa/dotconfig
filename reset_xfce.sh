@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # 1. Hentikan engine konfigurasi Xfce sementara waktu
 echo "Menghentikan layanan Xfconf..."

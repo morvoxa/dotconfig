@@ -30,10 +30,6 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.clipboard = "unnamedplus"
 opt.cmdheight = 0
-
-vim.keymap.set("n", "<leader>t", ":botright new | resize 15 | terminal<CR>", { desc = "Open Horizontal Terminal" })
-vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
-
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
