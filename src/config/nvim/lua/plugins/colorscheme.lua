@@ -1,8 +1,8 @@
 return {
-	"RRethy/base16-nvim",
+	"Mofiqul/vscode.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme base16-tokyo-night-dark")
+		vim.cmd("colorscheme vscode")
 	end,
 }

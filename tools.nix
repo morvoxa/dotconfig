@@ -1,12 +1,22 @@
-{ pkgs, inputs, ... }: {
-
+{ pkgs, CreateShortcut, ... }: {
   environment.systemPackages = with pkgs; [
-    inputs.CreateShortcut.packages.${pkgs.system}.default
+    CreateShortcut.packages.${pkgs.stdenv.hostPlatform.system}.default
     neovim
     gcc
     gnumake
-    tree-sitter
-    nixfmt
+    cmake
+    ninja
+    fd
+    ripgrep
+    nodejs
+    pnpm
     git
+    fastfetch
+    tree-sitter
+    #lsp
+    nixfmt
+    nixd
+    stylua
+    lua-language-server
   ];
 }

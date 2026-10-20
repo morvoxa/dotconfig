@@ -2,8 +2,19 @@ return {
 	"neovim/nvim-lspconfig",
 	opts = {},
 	config = function()
-		local servers =
-			{ "lua_ls", "vtsls", "tailwindcss", "svelte", "emmet_ls", "css", "clangd", "pyright", "ruff", "zls" }
+		local servers = {
+			"lua_ls",
+			"nixd",
+			"vtsls",
+			"tailwindcss",
+			"svelte",
+			"emmet_ls",
+			"css",
+			"clangd",
+			"pyright",
+			"ruff",
+			"zls",
+		}
 
 		vim.lsp.config("lua_ls", {
 			settings = {
@@ -29,6 +40,27 @@ return {
 
 		vim.lsp.config("tailwindcss", {
 			filetypes = { "svelte", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+		})
+
+		vim.lsp.config("nixd", {
+			cmd = { "nixd" },
+			filetypes = { "nix" },
+			root_markers = { "flake.nix", ".git" },
+			settings = {
+				nixd = {
+					nixpkgs = {
+						expr = "import <nixpkgs> { }",
+					},
+					formatting = {
+						command = { "nixfmt" },
+					},
+					options = {
+						nixos = {
+							expr = "(builtins.getFlake (toString ./.)).nixosConfigurations.nixos.options",
+						},
+					},
+				},
+			},
 		})
 
 		for _, server in ipairs(servers) do

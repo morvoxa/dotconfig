@@ -3,10 +3,14 @@
 
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst";
+    CreateShortcut.url = "github:morvoxa/CreateShortcut";
   };
 
-  outputs = { nixpkgs, ... }: {
+  outputs = { nixpkgs, CreateShortcut, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit CreateShortcut;
+      };
       modules = [
         ./configuration.nix
         ./xfce.nix

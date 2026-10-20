@@ -30,6 +30,12 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.clipboard = "unnamedplus"
 opt.cmdheight = 0
+opt.ignorecase = true
+opt.smartcase = true
+opt.incsearch = true
+opt.inccommand = "split"
+opt.iskeyword:append("-")
+
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
