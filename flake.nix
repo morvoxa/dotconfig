@@ -12,9 +12,9 @@
         inherit CreateShortcut;
       };
       modules = [
-        ./configuration.nix
-        ./xfce.nix
-        ./tools.nix
+        ./src/configuration.nix
+        ./src/xfce.nix
+        ./src/tools.nix
       ];
     };
   };
