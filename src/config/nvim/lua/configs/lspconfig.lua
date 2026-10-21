@@ -36,10 +36,6 @@ vim.lsp.config("lua_ls", {
   },
 })
 
-vim.lsp.config("tailwindcss", {
-  filetypes = { "svelte", "javascript", "typescript", "javascriptreact", "typescriptreact" },
-})
-
 vim.lsp.config("nixd", {
   cmd = { "nixd" },
   filetypes = { "nix" },
