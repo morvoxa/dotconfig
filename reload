@@ -191,3 +191,4 @@ else
 	echo -e "${D}${footer_text}${NC}"
 	echo ""
 fi
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
