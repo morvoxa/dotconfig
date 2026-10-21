@@ -132,7 +132,7 @@ ShellRoot {
 
                         width: 14
                         height: 16
-                        color: isActive ? "#4c7899" : "#333333"
+                        color: isActive ? "#eb0707" : "#333333"
 
                         Text {
                             anchors.centerIn: parent
