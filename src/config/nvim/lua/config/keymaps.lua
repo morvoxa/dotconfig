@@ -4,4 +4,5 @@
 local map = vim.keymap.set
 map("i", "jk", "<ESC>")
 map("n", "<leader>w", ":w<cr>", {})
+map("n", "<leader>x", ":bd<cr>", {})
 map("n", "<leader>nh", ":nohl<cr>", {})
