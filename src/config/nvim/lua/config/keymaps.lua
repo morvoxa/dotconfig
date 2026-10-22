@@ -1,8 +1,5 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-local map = vim.keymap.set
-map("i", "jk", "<ESC>")
+vim.g.mapleader = " "
+local map = vim.api.nvim_set_keymap
 map("n", "<leader>w", ":w<cr>", {})
-map("n", "<leader>x", ":bd<cr>", {})
-map("n", "<leader>nh", ":nohl<cr>", {})
+map("n", "<leader>q", ":q<cr>", {})
+map("i", "jk", "<Esc>", {})
