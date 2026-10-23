@@ -1,10 +1,5 @@
-if status is-login
-    if test -z "$DISPLAY"
-        startx
-    end
-end
 if status is-interactive
-  #for void
+  #for Arch
     abbr -a si "sudo pacman -Sy"
     abbr -a ss "sudo pacman -Ss"
     abbr -a srm "sudo pacman -Rns"

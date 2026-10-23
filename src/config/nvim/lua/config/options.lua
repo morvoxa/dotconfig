@@ -4,3 +4,4 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.ignorecase = true
 vim.opt.smartcase = false
 vim.opt.tabstop = 2
+vim.opt.iskeyword:append("-")
