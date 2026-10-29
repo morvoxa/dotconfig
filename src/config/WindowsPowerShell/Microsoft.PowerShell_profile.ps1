@@ -1,45 +1,36 @@
 function Invoke-VsEnvCmd {
-    # 1. Tentukan path ke file .bat Anda (Sesuaikan path jika berbeda)
+    # 1. Define the path to your .bat file (Adjust this path if necessary)
     $batPath = "$HOME/Desktop/MSVC/setup_x64.bat"
     
     if (-not (Test-Path $batPath)) {
-        Write-Error "File .bat tidak ditemukan di: $batPath"
+        Write-Error "The .bat file was not found at: $batPath"
         return
     }
 
-    Write-Host "Menginisialisasi lingkungan MSVC via CMD..." -ForegroundColor Cyan
+    Write-Host "Initializing MSVC environment via CMD..." -ForegroundColor Cyan
 
-    # 2. Jalankan .bat di CMD, lalu cetak semua environment variable yang dihasilkan
-    $block = cmd.exe /c " `"$batPath`" && set "
+    # 2. Run the .bat in CMD, then output all the resulting environment variables
+    $envBlock = cmd.exe /c " `"$batPath`" && set "
     
-    # 3. Tangkap dan injeksikan variabel tersebut ke dalam sesi PowerShell aktif
-    foreach ($line in $block) {
+    # 3. Capture and inject these variables into the active PowerShell session
+    foreach ($line in $envBlock) {
         if ($line -match "^([^=]+)=(.*)$") {
-            $name = $Matches[1]
-            $value = $Matches[2]
+            $varName  = $Matches[1]
+            $varValue = $Matches[2]
             
-            # Abaikan beberapa variabel internal bawaan CMD agar tidak konflik
-            if ($name -notin @('ALLUSERSPROFILE', 'APPDATA', 'COMPUTERNAME', 'ComSpec', 'HOMEDRIVE', 'HOMEPATH', 'LOCALAPPDATA', 'LOGONSERVER', 'NUMBER_OF_PROCESSORS', 'OS', 'PATHEXT', 'PROCESSOR_ARCHITECTURE', 'PROCESSOR_IDENTIFIER', 'PROCESSOR_LEVEL', 'PROCESSOR_REVISION', 'ProgramData', 'ProgramFiles', 'ProgramFiles(x86)', 'ProgramW6432', 'PSModulePath', 'PUBLIC', 'SystemDrive', 'SystemRoot', 'TEMP', 'TMP', 'USERDOMAIN', 'USERDOMAIN_ROAMING', 'USERNAME', 'USERPROFILE', 'windir')) {
-                [Environment]::SetEnvironmentVariable($name, $value, [EnvironmentVariableTarget]::Process)
+            # Exclude specific internal CMD variables to prevent conflicts
+            if ($varName -notin @('ALLUSERSPROFILE', 'APPDATA', 'COMPUTERNAME', 'ComSpec', 'HOMEDRIVE', 'HOMEPATH', 'LOCALAPPDATA', 'LOGONSERVER', 'NUMBER_OF_PROCESSORS', 'OS', 'PATHEXT', 'PROCESSOR_ARCHITECTURE', 'PROCESSOR_IDENTIFIER', 'PROCESSOR_LEVEL', 'PROCESSOR_REVISION', 'ProgramData', 'ProgramFiles', 'ProgramFiles(x86)', 'ProgramW6432', 'PSModulePath', 'PUBLIC', 'SystemDrive', 'SystemRoot', 'TEMP', 'TMP', 'USERDOMAIN', 'USERDOMAIN_ROAMING', 'USERNAME', 'USERPROFILE', 'windir')) {
+                [Environment]::SetEnvironmentVariable($varName, $varValue, [EnvironmentVariableTarget]::Process)
             }
-            # Khusus untuk PATH, gabungkan agar tool bawaan Anda tidak hilang
-            elseif ($name -eq 'PATH') {
-                $env:PATH = $value
+            # Handle the PATH variable separately to avoid overwriting standard system tools
+            elseif ($varName -eq 'PATH') {
+                $env:PATH = $varValue
             }
         }
     }
-    Write-Host "Lingkungan berhasil dimuat ke sesi PowerShell ini!" -ForegroundColor Green
+    Write-Host "Environment successfully loaded into this PowerShell session!" -ForegroundColor Green
 }
-
-# 4. Membuat Alias agar bisa dipanggil dengan cepat
-Set-Alias -Name vscmd -Value Invoke-VsEnvCmd
-
-function Remove-StubbornItem {
-    param([string]$Path)
-    if (Test-Path -Path $Path) {
-        Remove-Item -Path $Path -Recurse -Force
-    }
-}
+Invoke-VsEnvCmd
 Set-Alias -Name fdel -Value Remove-StubbornItem
 
 function Invoke-GitConventionalCommit {
