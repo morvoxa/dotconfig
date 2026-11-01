@@ -7,12 +7,14 @@ if status is-interactive
     abbr -a cmt "$HOME/dotconfig/src/commit"
 end
 
-#https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
+# Download URL referensi:
+# Java 17.0.2: https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
+# Kotlin 2.4.21: https://github.com/JetBrains/kotlin/releases/download/v2.4.21/kotlin-compiler-2.4.21.zip
+
 set -gx JAVA_HOME "$HOME/Java/jdk-17.0.2"
-set -gx JAVA_PATH "$HOME/Java/jdk-17.0.2/bin"
-#https://github.com/JetBrains/kotlin/releases/download/v2.4.21/kotlin-compiler-2.4.21.zip
-set -gx KOTLIN_PATH "$HOME/kotlinc/bin"
-set -gx PNPM_BIN "$HOME/.local/share/pnpm/bin"
-set -gx CARGO_BIN "$HOME/.cargo/bin"
-set -gx LOCAL_BIN "$HOME/.local/bin"
-set -gx PATH "$CARGO_BIN" "$PNPM_BIN" "$LOCAL_BIN" "$JAVA_PATH" "$KOTLIN_PATH" $PATH
+set -gx PATH "$HOME/.cargo/bin" \
+            "$HOME/.local/share/pnpm/bin" \
+            "$HOME/.local/bin" \
+            "$HOME/Java/jdk-17.0.2/bin" \
+            "$HOME/kotlinc/bin" \
+            $PATH
