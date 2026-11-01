@@ -57,6 +57,7 @@ local servers = {
 	"pyright",
 	"ruff",
 	"zls",
+	"kotlin_lsp",
 }
 
 -- Melakukan perulangan untuk mengaktifkan setiap server
