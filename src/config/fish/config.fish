@@ -7,7 +7,9 @@ if status is-interactive
     abbr -a cmt "$HOME/dotconfig/src/commit"
 end
 
+set -gx JAVA_HOME "$HOME/Java/jdk-27.0.1.0.3"
+set -gx JAVA_PATH "$HOME/Java/jdk-27.0.1.0.3/bin"
 set -gx PNPM_BIN "$HOME/.local/share/pnpm/bin"
 set -gx CARGO_BIN "$HOME/.cargo/bin"
 set -gx LOCAL_BIN "$HOME/.local/bin"
-set -gx PATH "$CARGO_BIN" "$PNPM_BIN" "$LOCAL_BIN" $PATH
+set -gx PATH "$CARGO_BIN" "$PNPM_BIN" "$LOCAL_BIN" "$JAVA_PATH" $PATH
