@@ -18,5 +18,13 @@
     "key": "space e",
     "command": "workbench.action.closeActiveEditor",
     "when": "editorTextFocus && editorLangId == 'oil'"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.action.toggleSidebarVisibility"
   }
 ]
