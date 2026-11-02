@@ -16,7 +16,6 @@ if vim.g.vscode then
 		':lua require("vscode").action("workbench.action.terminal.toggleTerminal")<cr>',
 		{ silent = true }
 	)
-
 	map("n", "<leader>e", ':lua require("vscode").action("oil-code.open")<cr>', { silent = true })
 	map("n", "<leader>r", ':lua require("vscode").action("workbench.action.openRecent")<cr>', { silent = true })
 	map("n", "<leader>b", ':lua require("vscode").action("workbench.action.closeActiveEditor")<cr>', { silent = true })

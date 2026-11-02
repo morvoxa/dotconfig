@@ -20,6 +20,10 @@
     "when": "editorTextFocus && editorLangId == 'oil'"
   },
   {
+    "key": "ctrl+f",
+    "command": "oil-code.open"
+  },
+  {
     "key": "space w",
     "command": "workbench.action.files.save",
     "when": "editorTextFocus && editorLangId == 'oil'"

@@ -34,8 +34,7 @@
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
   },
   "workbench.startupEditor": "none",
-  "workbench.activityBar.iconViewsViews": {
-    "workbench.view.explorer": false
-  },
-  "oil-code.columns": ["icon", "permissions", "size", "mtime"]
+  "oil-code.columns": ["icon", "permissions", "size", "mtime"],
+  "workbench.activityBar.location": "hidden",
+  "workbench.view.alwaysShowHeaderActions": false
 }
