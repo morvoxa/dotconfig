@@ -64,7 +64,7 @@ if [ -d "$BASE_DIR/ventura-xfce" ]; then
 	fi
 else
 	echo -e "\e[32m[GIT] Mengunduh repositori ventura-xfce baru...\e[0m"
-	run_cmd "git clone --depth 1 https://github.com '$BASE_DIR/ventura-xfce'"
+	run_cmd "git clone --depth 1 https://github.com/ibm-7094a/ventura-xfce '$BASE_DIR/ventura-xfce'"
 fi
 run_cmd "cd '$BASE_DIR/ventura-xfce/lightpad'"
 run_cmd "meson build --prefix=/usr --reconfigure"
