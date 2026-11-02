@@ -3,7 +3,7 @@
     "key": "ctrl+p",
     "command": "workbench.action.terminal.sendSequence",
     "when": "terminalFocus",
-    "args": { "text": "\u0010" } // Menembakkan Ctrl+P native ke shell
+    "args": { "text": "\u0010" }
   },
   {
     "key": "ctrl+n",
@@ -15,16 +15,17 @@
     "when": "suggestWidgetVisible"
   },
   {
-    "key": "space e",
+    "key": "q",
     "command": "workbench.action.closeActiveEditor",
     "when": "editorTextFocus && editorLangId == 'oil'"
   },
   {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.view.explorer"
+    "key": "space w",
+    "command": "workbench.action.files.save",
+    "when": "editorTextFocus && editorLangId == 'oil'"
   },
   {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.action.toggleSidebarVisibility"
+    "key": "ctrl+h",
+    "command": "workbench.view.explorer"
   }
 ]
