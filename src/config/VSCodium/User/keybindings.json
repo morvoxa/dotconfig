@@ -1,0 +1,21 @@
+[
+  {
+    "key": "ctrl+h",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus",
+    "args": { "text": "\u0010" } // Menembakkan Ctrl+P native ke shell
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible"
+  }
+]
