@@ -21,7 +21,7 @@
   },
   {
     "key": "ctrl+f",
-    "command": "oil-code.open"
+    "command": "code-telescope.fuzzy.file"
   },
   {
     "key": "space w",

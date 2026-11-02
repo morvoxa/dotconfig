@@ -36,5 +36,7 @@
   "workbench.startupEditor": "none",
   "oil-code.columns": ["icon", "permissions", "size", "mtime"],
   "workbench.activityBar.location": "hidden",
-  "workbench.view.alwaysShowHeaderActions": false
+  "workbench.view.alwaysShowHeaderActions": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": "none"
 }
