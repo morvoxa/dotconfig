@@ -1,9 +1,5 @@
 [
   {
-    "key": "ctrl+h",
-    "command": "workbench.view.explorer"
-  },
-  {
     "key": "ctrl+p",
     "command": "workbench.action.terminal.sendSequence",
     "when": "terminalFocus",
@@ -17,5 +13,10 @@
     "key": "ctrl+y",
     "command": "acceptSelectedSuggestion",
     "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorTextFocus && editorLangId == 'oil'"
   }
 ]

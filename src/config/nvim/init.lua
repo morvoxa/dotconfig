@@ -17,6 +17,7 @@ if vim.g.vscode then
 		{ silent = true }
 	)
 
+	map("n", "<leader>e", ':lua require("vscode").action("oil-code.open")<cr>', { silent = true })
 	map("n", "<leader>r", ':lua require("vscode").action("workbench.action.openRecent")<cr>', { silent = true })
 	map("n", "<leader>b", ':lua require("vscode").action("workbench.action.closeActiveEditor")<cr>', { silent = true })
 	map("n", "<leader>w", ':lua require("vscode").action("workbench.action.files.save")<cr>', { silent = true })
