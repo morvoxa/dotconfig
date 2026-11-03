@@ -7,15 +7,27 @@
       "command": "vscode-neovim.escape"
     }
   },
-  "[rust]": {
-    "editor.semanticHighlighting.enabled": false,
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
   "chat.disableAIFeatures": true,
+  "workbench.startupEditor": "none",
+  "oil-code.columns": ["icon", "permissions", "size", "mtime"],
+  "workbench.activityBar.location": "hidden",
+  "breadcrumbs.enabled": false,
+  "window.commandCenter": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "workbench.layoutControl": false,
+  "editor.glyphMargin": false,
+  "window.titleBarStyle": "native",
+  "window.windowControlsVisibility": "custom",
+  "editor.lineNumbers": "relative",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "[rust]": {
+    "editor.semanticHighlighting.enabled": false,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -32,11 +44,5 @@
   },
   "[cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
-  },
-  "workbench.startupEditor": "none",
-  "oil-code.columns": ["icon", "permissions", "size", "mtime"],
-  "workbench.activityBar.location": "hidden",
-  "workbench.view.alwaysShowHeaderActions": false,
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.showTabs": "none"
+  }
 }
