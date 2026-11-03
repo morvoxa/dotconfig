@@ -3,6 +3,7 @@ if vim.g.vscode then
 	vim.opt.smartcase = false
 	vim.opt.ignorecase = true
 	vim.g.mapleader = " "
+	vim.opt.iskeyword:append("-")
 	vim.pack.add({
 		{ src = "https://github.com/folke/flash.nvim" },
 	})
