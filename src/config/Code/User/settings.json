@@ -1,4 +1,14 @@
 {
+  //asvetliakov.vscode-neovim
+  //esbenp.prettier-vscode
+  //guichina.code-telescope
+  //haphazarddev.oil-code
+  //johnnymorganz.stylua
+  //llvm-vs-code-extensions.vscode-clangd
+  //rust-lang.rust-analyzer
+  //tamasfe.even-better-toml
+  //vitchu.vscode-autohide-vim
+
   // Neovim
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
