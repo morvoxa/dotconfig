@@ -42,9 +42,6 @@
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
   "[c]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
   },
