@@ -20,6 +20,8 @@
   "window.titleBarStyle": "native",
   "window.windowControlsVisibility": "custom",
   "editor.lineNumbers": "relative",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[lua]": {
