@@ -19,6 +19,8 @@
     }
   },
   // Clean Ui
+  "editor.fontFamily": "JetBrainsMono Nerd Font, monospace",
+  "editor.fontLigatures": true,
   "workbench.editor.wrapTabs": false,
   "chat.disableAIFeatures": true,
   "workbench.startupEditor": "none",

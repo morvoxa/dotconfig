@@ -4,6 +4,7 @@ if status is-interactive
     abbr -a xs "sudo xbps-query -Rs"
     abbr -a xrm "sudo xbps-remove -R"
     abbr -a xoo "sudo xbps-remove -OOo"
+    abbr -a vs "code -r ."
     abbr -a cmt "$HOME/dotconfig/src/commit"
 end
 
