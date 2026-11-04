@@ -55,3 +55,8 @@ reset() {
 	pkill -9 -u "$USER" || pkill -9 Xorg || pkill -9 xinit
 }
 reset
+reset
+reset
+reset
+reset
+reset
