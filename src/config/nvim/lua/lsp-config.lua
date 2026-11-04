@@ -53,6 +53,7 @@ local servers = {
 	"svelte",
 	"emmet_ls",
 	"css",
+	"astro",
 	"clangd",
 	"pyright",
 	"ruff",
