@@ -24,7 +24,7 @@ if vim.g.vscode then
 	map("n", "H", ':lua require("vscode").action("workbench.action.previousEditor")<cr>', { silent = true })
 	map("n", "L", ':lua require("vscode").action("workbench.action.nextEditor")<cr>', { silent = true })
 	map("n", "<leader>nh", ":nohl<cr>", { silent = true })
-else 
+else
 	vim.env.CC = "gcc"
 	require("options")
 	require("keymaps")
