@@ -9,7 +9,7 @@ for arg in "$@"; do
 		DEBUG_MODE=true
 	fi
 done
-PKGS_TO_INSTALL="base-devel git meson ninja vala libgee-devel gnome-menus-devel glib-devel libwnck-devel gtk+3-devel xterm python3 python3-setuptools gnome-menus plank vala-panel-appmenu-xfce pulseaudio"
+PKGS_TO_INSTALL="base-devel git meson ninja vala libgee-devel gnome-menus-devel glib-devel libwnck-devel gtk+3-devel xterm python3 python3-setuptools gnome-menus plank vala-panel-appmenu-xfce xfce4-pulseaudio-plugin pulseaudio"
 run_cmd() {
 	if [ "$DRY_RUN" = true ]; then
 		echo -e "\e[33m[DRY-RUN SIMULASI] $*\e[0m"
