@@ -24,6 +24,8 @@
   "workbench.editor.wrapTabs": false,
   "chat.disableAIFeatures": true,
   "workbench.startupEditor": "none",
+  "oil-code.disableOpenCwdNothingOpen": true,
+  "oil-code.hasNerdFont": true,
   "oil-code.columns": ["icon", "permissions", "size", "mtime"],
   "workbench.activityBar.location": "hidden",
   "breadcrumbs.enabled": false,
