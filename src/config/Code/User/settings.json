@@ -21,12 +21,8 @@
   // Clean Ui
   "editor.fontFamily": "JetBrainsMono Nerd Font, monospace",
   "editor.fontLigatures": true,
-  "workbench.editor.wrapTabs": false,
   "chat.disableAIFeatures": true,
   "workbench.startupEditor": "none",
-  "oil-code.disableOpenCwdNothingOpen": true,
-  "oil-code.hasNerdFont": true,
-  "oil-code.columns": ["icon", "permissions", "size", "mtime"],
   "workbench.activityBar.location": "hidden",
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
@@ -40,6 +36,10 @@
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.horizontal": "hidden",
   "window.menuBarVisibility": "hidden",
+  //oil config
+  "oil-code.disableOpenCwdNothingOpen": true,
+  "oil-code.hasNerdFont": true,
+  "oil-code.columns": ["icon", "permissions", "size", "mtime"],
   // Formatter config
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
