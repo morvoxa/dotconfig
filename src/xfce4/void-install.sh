@@ -32,6 +32,10 @@ apply_xfce_config() {
 	run_cmd "cp -rf '$BASE_DIR/ventura-xfce/config/xfce4/' ~/.config/"
 	echo -e " │   └── \e[34m[MOVING]\e[0m konfigurasi dict baru ke ~/.config/xfce4-dict..."
 	run_cmd "cp -rf '$BASE_DIR/ventura-xfce/config/xfce4-dict/' ~/.config/"
+    echo -e " │   └── \e[34m[MOVING]\e[0m Keyboard Config"
+    run_cmd "cp -rf '$BASE_DIR/keyboards.xml' ~/.config/xfce4/xfconf/xfce-perchannel-xml"
+    echo -e " │   └── \e[34m[MOVING]\e[0m Keyboard Shortcut"
+    run_cmd "cp -rf '$BASE_DIR/xfce4-keyboard-shortcuts.xml' ~/.config/xfce4/xfconf/xfce-perchannel-xml"
 }
 
 trap rollback ERR
