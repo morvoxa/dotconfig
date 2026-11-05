@@ -36,6 +36,15 @@ apply_xfce_config() {
     run_cmd "cp -rf '$BASE_DIR/keyboards.xml' ~/.config/xfce4/xfconf/xfce-perchannel-xml"
     echo -e " │   └── \e[34m[MOVING]\e[0m Keyboard Shortcut"
     run_cmd "cp -rf '$BASE_DIR/xfce4-keyboard-shortcuts.xml' ~/.config/xfce4/xfconf/xfce-perchannel-xml"
+    echo -e " │   └── \e[34m[MOVING]\e[0m Settings gap "
+	GAP_SIZE=18
+	xfconf-query -c xfwm4 -p /general/margin_top -n -t int -s $GAP_SIZE
+	xfconf-query -c xfwm4 -p /general/margin_bottom -n -t int -s $GAP_SIZE
+	xfconf-query -c xfwm4 -p /general/margin_left -n -t int -s $GAP_SIZE
+	xfconf-query -c xfwm4 -p /general/margin_right -n -t int -s $GAP_SIZE
+	xfconf-query -c xfwm4 -p /general/borderless_maximize -s false
+
+
 }
 
 trap rollback ERR
