@@ -47,6 +47,7 @@ local menu = "hyprlauncher"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("wireplumber")
 	hl.exec_cmd("pipewire")
+	hl.exec_cmd("qs")
 end)
 
 -------------------------------
