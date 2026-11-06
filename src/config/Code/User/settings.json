@@ -12,6 +12,16 @@
   "vim.smartcase": false,
   "vim.ignorecase": true,
   "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<C-j>"],
