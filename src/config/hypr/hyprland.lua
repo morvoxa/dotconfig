@@ -223,10 +223,10 @@ hl.window_rule({
 hl.window_rule({
 	match = { class = "firefox" },
 	float = true,
-	size = "1200 800",
+	size = "1200 900",
 })
 hl.window_rule({
 	match = { class = "kitty" },
 	float = true,
-	size = "1000 600",
+	size = "1200 750",
 })
