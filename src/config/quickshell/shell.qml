@@ -60,8 +60,6 @@ PanelWindow {
         topRightRadius: 0
         bottomLeftRadius: height / 2
         bottomRightRadius: height / 2
-        border.color: "#79747e"
-        border.width: 1
         Row {
             id: contentRow
             anchors.centerIn: parent

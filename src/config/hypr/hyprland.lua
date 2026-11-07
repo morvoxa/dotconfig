@@ -48,6 +48,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wireplumber")
 	hl.exec_cmd("pipewire")
 	hl.exec_cmd("qs")
+	hl.exec_cmd("swaybg -i ~/Downloads/tahoe.jpg")
 end)
 
 -------------------------------
